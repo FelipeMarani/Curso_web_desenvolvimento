@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicios HTML</title>
+
+    <style>
+
+        #conteudo{
+            padding: 15px 0px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <header>
+       <h1>
+        Exercícios HTML  
+       </h1>
+    </header>
+        <nav>
+            <a href="teste.html">Cavalo</a> |
+            <a href="texto1.html">Ratinhooooooo</a> |
+            <a href="texto2.html">Ueeepaaaa</a> |
+            <a href="lista.html">Eu, tu nois bota nela</a> |
+            <a href="listaAninhada.html">Bala Halls</a> |
+            <a href="links.html">Montagem Automotiva</a> |
+            <a href="tabela.html">Panelinha</a> |
+            <a href="forms/form.html">Passa lá boba</a> |
+            
+        </nav>
+            <section id="conteudo"></section>
+
+            <footer> 
+                PAI tá estourado
+            </footer>
+
+            <script>
+                document.querySelectorAll('a').forEach(link =>{
+                    const conteudo = document.getElementById('conteudo')
+                    link.onclick = function(e) {
+                        e.preventDefault()
+                       console.log('ação!!')
+                       fetch(link.href)
+                       .then(resp => resp.text())
+                       .then(html => conteudo.innerHTML = html)
+                }
+                })
+            </script>
+            <script></script>
+</body>
+</html>
